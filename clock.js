@@ -1,0 +1,29 @@
+let seconds = document.getElementById('seconds');
+let hours = document.getElementById('hours');
+let minutes = document.getElementById('minutes');
+let date = new Date();
+let dateMinutes = date.getMinutes();
+let dateSeconds = date.getSeconds();
+let dateHours = date.getHours();
+console.log(dateHours, dateMinutes, dateSeconds);
+let fullHour ="Activation time: " +dateHours + ' : ' +dateMinutes+' : ' + dateSeconds;
+document.getElementById("intimehour").innerHTML = fullHour;
+/*seconds.style.animationPlayState = "paused";
+minutes.style.animationPlayState = "paused";
+hours.style.animationPlayState = "paused";*/
+
+let percentHours = (360 / 43200) * (dateHours * 3600);
+let percentMin = dateMinutes * 6;
+let percentSec = dateSeconds * 6;
+seconds.style.transform = "rotateZ(" + percentSec + "deg)";
+minutes.style.transform = "rotateZ(" + percentMin + "deg)";
+hours.style.transform = "rotateZ(" + percentHours + "deg)";
+seconds.style.mozTransform = "rotateZ(" + percentSec + "deg)";
+minutes.style.mozTransform = "rotateZ(" + percentMin + "deg)";
+hours.style.mozTransform = "rotateZ(" + percentHours + "deg)";
+seconds.style.webkitTransform = "rotate(" + percentSec + "deg)";
+minutes.style.webkitTransform = "rotate(" + percentMin + "deg)";
+hours.style.webkitTransform = "rotate(" + percentHours + "deg)";/*
+seconds.style.animationPlayState = "running";
+minutes.style.animationPlayState = "running";
+hours.style.animationPlayState = "running";*/
