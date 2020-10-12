@@ -14,6 +14,7 @@ hours.style.animationPlayState = "paused";*/
 if(dateHours>12){
     dateHours = dateHours - 12;
 }
+//pregntar como editar estado de steps segun segundos o minutos pasados
 let currentHour = (dateHours*60) + (dateMinutes*1);
 let percentHours = (360 / 43200) * (currentHour * 60);
 let percentMin = dateMinutes * 6;
